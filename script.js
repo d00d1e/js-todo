@@ -118,8 +118,21 @@ function deleteFromLocalStorage(todo) {
   localStorage.setItem("todos", JSON.stringify(todoItemRemaining));
 }
 
+// add/enter button to create 
+function displayTodo(todo) {
+  todo.preventDefault();
 
-// EVENT LISTENER
+  const inputTodo = todoInputEl.value;
+  if (inputTodo != '' && inputTodo != ' ') {
+    addTodo(inputTodo);
+    saveToLocalStorage(inputTodo);
+  } 
+  todoInputEl.value = '';
+}
+
+
+
+// EVENT LISTENERS
 // get todos from local storage on document load
 document.addEventListener('DOMContentLoaded', getFromLocalStorage);
 
@@ -129,32 +142,11 @@ todoListContainer.addEventListener('click', (e) => {
   completeTodo(e.target);
 });
 
-// clicking add button to add todo
-formEl.addEventListener('click', (e) => {
-  e.preventDefault();
+// click button to add todo
+formEl.addEventListener('click', displayTodo);
 
-  const inputTodo = todoInputEl.value;
-  if (inputTodo != '' && inputTodo != ' ') {
-    addTodo(inputTodo);
-    saveToLocalStorage(inputTodo);
-  }
-  
-  // clear input field
-  todoInputEl.value = '';
-});
+// press enter key to add todo 
+formEl.addEventListener('submit', displayTodo);
 
-// pressing enter key to add todo --- > REFACTOR!!!
-formEl.addEventListener('submit', (e) => {
-  e.preventDefault();
-
-  const inputTodo = todoInputEl.value;
-  if (inputTodo != '' && inputTodo != ' ') {
-    addTodo(inputTodo);
-    saveToLocalStorage(inputTodo);
-  } 
-  
-  // clear input field
-  todoInputEl.value = '';
-});
 
 

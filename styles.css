@@ -74,13 +74,14 @@ ul {
 }
 
 .todo__header .overflow h1 {
-  animation: slideIn 0.5s ease both;
+  animation: slideIn 0.9s ease both;
 }
 
 .todo__header .overflow #currentDate {
   transform: translateX(-96px);
   display: block;
-  animation: slideIn 0.9s ease both;
+  animation: slideIn 1.3s ease both;
+  text-align: center;
 }
 
 
@@ -155,7 +156,7 @@ ul {
   text-align: center;
   cursor: pointer;
   margin: -3px;
-  background-color: #000;
+  background-color: #135465;
   color: #fff;
   transition: background-color 0.3s;
 }
