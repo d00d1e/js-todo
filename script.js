@@ -4,8 +4,37 @@
 const formEl = document.getElementById('form');
 const todoInputEl = document.getElementById('todoInput');
 const todoListContainer = document.querySelector('.todo__list');
+const currentDay = document.getElementById('currentDay');
+const currentDate = document.getElementById('currentDate');
+
+const date = new Date();
+const day = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+const month = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 
 
+currentDay.textContent = day[date.getDay()];
+currentDate.textContent = `${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 
 
 // FUNCTIONS

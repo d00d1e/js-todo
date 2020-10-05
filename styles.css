@@ -37,7 +37,7 @@ ul {
  
   /* center  */
   position: fixed;
-  top: 40%;
+  top: 50%;
   left: 50%;
   width: auto;
   height: auto;
@@ -77,10 +77,10 @@ ul {
   animation: slideIn 0.5s ease both;
 }
 
-.todo__header .overflow #todaysDate {
+.todo__header .overflow #currentDate {
   transform: translateX(-96px);
   display: block;
-  animation: slideIn 0.4s 0.2s ease both;
+  animation: slideIn 0.9s ease both;
 }
 
 
