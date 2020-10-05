@@ -60,7 +60,7 @@ ul {
 
 /* TODO HEADER  */
 .todo__header {
-  background-image: url('./background.jpg');
+  background-image: url('../img/background.jpg');
   background-size: cover;
   padding: 140px;
   padding-top: 90px;
