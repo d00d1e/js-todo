@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
-// SELECTORS 
-const formEl = document.getElementById('form');
-const todoInputEl = document.getElementById('todoInput');
-const todoListContainer = document.querySelector('.todo__list');
-const currentDay = document.getElementById('currentDay');
-const currentDate = document.getElementById('currentDate');
+// SELECTORS
+const formEl = document.getElementById("form");
+const todoInputEl = document.getElementById("todoInput");
+const todoListContainer = document.querySelector(".todo__list");
+const currentDay = document.getElementById("currentDay");
+const currentDate = document.getElementById("currentDate");
 
 const date = new Date();
 const day = [
@@ -32,16 +32,16 @@ const month = [
   "December",
 ];
 
-
 currentDay.textContent = day[date.getDay()];
-currentDate.textContent = `${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-
+currentDate.textContent = `${
+  month[date.getMonth()]
+} ${date.getDate()}, ${date.getFullYear()}`;
 
 // FUNCTIONS
 // add todo from input to list
 function addTodo(todo) {
-  const liEl = document.createElement('li');
-  liEl.classList.add('bounceIn');
+  const liEl = document.createElement("li");
+  liEl.classList.add("bounceIn");
   liEl.innerHTML = `
     <span class="text">${todo}</span>
     <div class="options">
@@ -53,13 +53,13 @@ function addTodo(todo) {
   todoListContainer.appendChild(liEl);
 }
 
-// delete todo 
+// delete todo
 function deleteTodo(todo) {
-  if (todo.classList.contains('fa-trash-alt') || todo.id === "delete") {
-    const todoLiEl = todo.closest('li'); // selects closest li node
+  if (todo.classList.contains("fa-trash-alt") || todo.id === "delete") {
+    const todoLiEl = todo.closest("li"); // selects closest li node
     todoLiEl.classList.remove("bounceIn");
     todoLiEl.classList.add("bounceOutDown");
-    
+
     setTimeout(() => {
       todoLiEl.remove();
     }, 1000);
@@ -81,32 +81,32 @@ function editTodo(todo) {
 // complete todo
 function completeTodo(todo) {
   if (todo.classList.contains("fa-check") || todo.id === "check") {
-    const crossTodo = todo.closest('li');
-    crossTodo.firstElementChild.classList.toggle('completed');
+    const crossTodo = todo.closest("li");
+    crossTodo.firstElementChild.classList.toggle("completed");
   }
 }
 
-// save todos to local storage 
+// save todos to local storage
 function saveToLocalStorage(todo) {
   let todoArr;
-  if (localStorage.getItem('todos') === null) {
+  if (localStorage.getItem("todos") === null) {
     todoArr = [];
   } else {
-    todoArr = JSON.parse(localStorage.getItem('todos')); // JSON string --> obj
+    todoArr = JSON.parse(localStorage.getItem("todos")); // JSON string --> obj
   }
   todoArr.push(todo);
-  localStorage.setItem('todos', JSON.stringify(todoArr)); // obj or array --> JSON string
-} 
+  localStorage.setItem("todos", JSON.stringify(todoArr)); // obj or array --> JSON string
+}
 
-// get and display todos from local storage 
+// get and display todos from local storage
 function getFromLocalStorage() {
-  const todoArr = JSON.parse(localStorage.getItem('todos'));
-  todoArr.forEach(todo => {
+  const todoArr = JSON.parse(localStorage.getItem("todos"));
+  todoArr.forEach((todo) => {
     addTodo(todo);
   });
 }
 
-// delete todo from local storage 
+// delete todo from local storage
 function deleteFromLocalStorage(todo) {
   const todoArr = JSON.parse(localStorage.getItem("todos"));
   const todoLiEl = todo.closest("li");
@@ -118,35 +118,30 @@ function deleteFromLocalStorage(todo) {
   localStorage.setItem("todos", JSON.stringify(todoItemRemaining));
 }
 
-// add/enter button to create 
+// add/enter button to create
 function displayTodo(todo) {
   todo.preventDefault();
 
   const inputTodo = todoInputEl.value;
-  if (inputTodo != '' && inputTodo != ' ') {
+  if (inputTodo != "" && inputTodo != " ") {
     addTodo(inputTodo);
     saveToLocalStorage(inputTodo);
-  } 
-  todoInputEl.value = '';
+  }
+  todoInputEl.value = "";
 }
-
-
 
 // EVENT LISTENERS
 // get todos from local storage on document load
-document.addEventListener('DOMContentLoaded', getFromLocalStorage);
+document.addEventListener("DOMContentLoaded", getFromLocalStorage);
 
-todoListContainer.addEventListener('click', (e) => {
+todoListContainer.addEventListener("click", (e) => {
   deleteTodo(e.target);
   editTodo(e.target);
   completeTodo(e.target);
 });
 
 // click button to add todo
-formEl.addEventListener('click', displayTodo);
+formEl.addEventListener("click", displayTodo);
 
-// press enter key to add todo 
-formEl.addEventListener('submit', displayTodo);
-
-
-
+// press enter key to add todo
+formEl.addEventListener("submit", displayTodo);
