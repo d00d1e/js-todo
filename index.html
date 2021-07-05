@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo List</title>
-  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-  <link rel="stylesheet" href="././assets/css/styles.css">
-  <script src="././assets/js/script.js" defer></script>
-</head>
-<body>
-  <div class="todo">
-    <div class="container">
-      <!-- todo header  -->
-      <header class="todo__header">
-        <div class="overflow">
-          <h1><span id="currentDay">Sunday</span> Todos</h1>
-          <span id="currentDate">Oct 4, 2020</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="./icon.png" />
+    <title>Todo List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <script src="./assets/js/script.js" defer></script>
+  </head>
+  <body>
+    <div class="todo">
+      <div class="container">
+        <!-- TODO HEADER  -->
+        <header class="todo__header">
+          <div class="overflow">
+            <h1><span id="currentDay">Sunday</span> Todos</h1>
+            <span id="currentDate">Oct 4, 2020</span>
+          </div>
+        </header>
+        <!-- TODO INPUT FORM -->
+        <div class="todo__input wrap">
+          <form id="form">
+            <input type="text" id="todoInput" placeholder="Add task" />
+            <buton type="submit" class="todo__btn">
+              <i class="fas fa-plus-square"></i>
+            </buton>
+          </form>
         </div>
-      </header>
-      <!-- todo input form  -->
-      <div class="todo__input wrap">
-        <form id="form">
-          <input type="text" id="todoInput" placeholder="Enter things to do for the day">
-          <buton type="submit" class="todo__btn"><i class="fas fa-plus-square"></i></buton>
-        </form>
-      </div>
-      <!-- todo list  -->
-      <ul class="todo__list wrap">
-        <!-- <li class="todo__items">
+        <!-- TODO LIST  -->
+        <ul class="todo__list wrap">
+          <!-- <li class="todo__items">
           <span class="text">New Task 1</span>
           <div class="options">
             <span id="check" class="fas fa-check"></span>
@@ -36,8 +43,8 @@
             <span id="delete" class="fas fa-trash-alt"></span>
           </div>
         </li> -->
-      </ul>
+        </ul>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap");
 
 * {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   min-height: 100vh;
   width: 100vh;
-  font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(#135465, #C3DCC8, #09A1BB);
+  font-family: "Quicksand", sans-serif;
+  background: linear-gradient(#135465, #c3dcc8, #09a1bb);
 }
 
 ul {
@@ -34,18 +34,18 @@ ul {
   border-radius: 20px;
   padding-bottom: 40px;
   box-shadow: 0 1px 10px#777;
- 
+
   /* center  */
   position: fixed;
   top: 50%;
   left: 50%;
   width: auto;
   height: auto;
-  -webkit-transform: translate(-50%,-50%);
-  -moz-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  -o-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .wrap {
@@ -55,12 +55,14 @@ ul {
 
 .completed {
   text-decoration: line-through;
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
-/* TODO HEADER  */
+/*************
+  TODO HEADER
+**************/
 .todo__header {
-  background-image: url('../img/background.jpg');
+  background-image: url("../img/background.jpg");
   background-size: cover;
   padding: 140px;
   padding-top: 90px;
@@ -84,8 +86,9 @@ ul {
   text-align: center;
 }
 
-
-/* TODO INPUT  */
+/************
+  TODO INPUT
+*************/
 .todo__input {
   padding: 20px;
   border-radius: 10px;
@@ -116,11 +119,13 @@ ul {
 }
 
 .todo__input .todo__btn:hover {
-  background-color:	rgb(33, 141, 169, 0.4);
+  background-color: rgb(33, 141, 169, 0.4);
   color: #000;
 }
 
-/* TODO LIST */
+/************
+  TODO LIST
+*************/
 .todo__list li {
   display: flex;
   align-items: center;
@@ -131,7 +136,7 @@ ul {
   height: 40px;
   margin: 10px 0;
   overflow: hidden;
-  background: #09A1BB;
+  background: #09a1bb;
   color: #fff;
 }
 
@@ -176,8 +181,8 @@ ul {
 .bounceIn {
   -webkit-animation-name: bounceIn;
   animation-name: bounceIn;
-  -webkit-animation-duration: .75s;
-  animation-duration: .75s;
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
@@ -193,9 +198,9 @@ ul {
   animation-fill-mode: both;
 }
 
-
-
-/* KETFRAMES  */
+/************
+  KEYFRAMES
+*************/
 @keyframes slideIn {
   0% {
     transform: translateX(-249px);
@@ -206,22 +211,27 @@ ul {
 }
 
 @-webkit-keyframes bounceIn {
-  0%, 20%, 40%, 60%, 80%, 100% {
-    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   0% {
     opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
   }
   20% {
     -webkit-transform: scale3d(1.1, 1.1, 1.1);
     transform: scale3d(1.1, 1.1, 1.1);
   }
   40% {
-    -webkit-transform: scale3d(.9, .9, .9);
-    transform: scale3d(.9, .9, .9);
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
   }
   60% {
     opacity: 1;
@@ -229,8 +239,8 @@ ul {
     transform: scale3d(1.03, 1.03, 1.03);
   }
   80% {
-    -webkit-transform: scale3d(.97, .97, .97);
-    transform: scale3d(.97, .97, .97);
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
   }
   100% {
     opacity: 1;
@@ -238,23 +248,29 @@ ul {
     transform: scale3d(1, 1, 1);
   }
 }
+
 @keyframes bounceIn {
-  0%, 20%, 40%, 60%, 80%, 100% {
-    -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   0% {
     opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
   }
   20% {
     -webkit-transform: scale3d(1.1, 1.1, 1.1);
     transform: scale3d(1.1, 1.1, 1.1);
   }
   40% {
-    -webkit-transform: scale3d(.9, .9, .9);
-    transform: scale3d(.9, .9, .9);
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
   }
   60% {
     opacity: 1;
@@ -262,22 +278,23 @@ ul {
     transform: scale3d(1.03, 1.03, 1.03);
   }
   80% {
-    -webkit-transform: scale3d(.97, .97, .97);
-    transform: scale3d(.97, .97, .97);
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
   }
   100% {
     opacity: 1;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
-} 
+}
 
 @-webkit-keyframes bounceOutDown {
   20% {
     -webkit-transform: translate3d(0, 10px, 0);
     transform: translate3d(0, 10px, 0);
   }
-  40%, 45% {
+  40%,
+  45% {
     opacity: 1;
     -webkit-transform: translate3d(0, -20px, 0);
     transform: translate3d(0, -20px, 0);
@@ -288,12 +305,14 @@ ul {
     transform: translate3d(0, 2000px, 0);
   }
 }
+
 @keyframes bounceOutDown {
   20% {
     -webkit-transform: translate3d(0, 10px, 0);
     transform: translate3d(0, 10px, 0);
   }
-  40%, 45% {
+  40%,
+  45% {
     opacity: 1;
     -webkit-transform: translate3d(0, -20px, 0);
     transform: translate3d(0, -20px, 0);
@@ -303,4 +322,4 @@ ul {
     -webkit-transform: translate3d(0, 2000px, 0);
     transform: translate3d(0, 2000px, 0);
   }
-} 
+}
