@@ -101,9 +101,11 @@ function saveToLocalStorage(todo) {
 // get and display todos from local storage
 function getFromLocalStorage() {
   const todoArr = JSON.parse(localStorage.getItem("todos"));
-  todoArr.forEach((todo) => {
-    addTodo(todo);
-  });
+  if (todoArr) {
+    todoArr.forEach((todo) => {
+      addTodo(todo);
+    });
+  }
 }
 
 // delete todo from local storage

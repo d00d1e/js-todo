@@ -7,7 +7,7 @@
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   width: 100vh;
   font-family: "Quicksand", sans-serif;
   background: linear-gradient(#135465, #c3dcc8, #09a1bb);
@@ -21,6 +21,7 @@ ul {
 .todo {
   width: 100%;
   max-width: 600px;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
