@@ -8,9 +8,13 @@
 
 body {
   height: 100vh;
+  min-height: 100vh;
   width: 100vh;
+  min-width: 100vh;
   font-family: "Quicksand", sans-serif;
   background: linear-gradient(#135465, #c3dcc8, #09a1bb);
+  overscroll-behavior: none;
+  overflow-x: hidden;
 }
 
 ul {
@@ -19,12 +23,12 @@ ul {
 }
 
 .todo {
+  height: auto;
   width: 100%;
+  min-width: 100%;
   max-width: 600px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-width: 320px;
+  margin: 0 auto;
   padding: 20px;
   overflow: hidden;
 }
@@ -32,6 +36,12 @@ ul {
 .container {
   background: white;
   width: 100%;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 20px;
   padding-bottom: 40px;
   box-shadow: 0 1px 10px#777;
