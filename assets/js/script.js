@@ -6,6 +6,7 @@ const todoInputEl = document.getElementById("todoInput");
 const todoListContainer = document.querySelector(".todo__list");
 const currentDay = document.getElementById("currentDay");
 const currentDate = document.getElementById("currentDate");
+const addBtn = document.querySelector(".todo__btn");
 
 const date = new Date();
 const day = [
@@ -121,8 +122,8 @@ function deleteFromLocalStorage(todo) {
 }
 
 // add/enter button to create
-function displayTodo(todo) {
-  todo.preventDefault();
+function displayTodo(e) {
+  e.preventDefault();
 
   const inputTodo = todoInputEl.value;
   if (inputTodo != "" && inputTodo != " ") {
@@ -143,7 +144,7 @@ todoListContainer.addEventListener("click", (e) => {
 });
 
 // click button to add todo
-formEl.addEventListener("click", displayTodo);
+addBtn.addEventListener("click", displayTodo);
 
 // press enter key to add todo
 formEl.addEventListener("submit", displayTodo);
